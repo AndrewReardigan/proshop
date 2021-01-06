@@ -19,7 +19,7 @@ const ProductScreen = ({ match }) => {
             </Link>;
             <Row>
                 <Col md={6}>
-                    <Image src={product} alt={product.name} fluid/>
+                    <Image src={product.image} alt={product.name} fluid/>
                 </Col>
                 <Col md={3}>
                 <ListGroup variant='flush'>
@@ -56,10 +56,7 @@ const ProductScreen = ({ match }) => {
                             </Row>
                         </ListGroup.Item>
                     </ListGroup>
-                </Card>
-            </Col>
-            <Col md={3}>
-                <Card>
+        
                     <ListGroup variant='flush'>
                         <ListGroup.Item>
                             <Row>
@@ -72,7 +69,7 @@ const ProductScreen = ({ match }) => {
                             </Row>
                         </ListGroup.Item>
                         <ListGroup.Item>
-                            <Button className='btn-block' type='button'>
+                            <Button className='btn-block' type='button' disabledd={product.countInStock === 0}>
                                 Add To Cart
                             </Button>
                         </ListGroup.Item>
